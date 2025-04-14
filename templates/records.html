@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient and Next of Kin Records</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="hospital-info">
+            <img src="https://images.pexels.com/photos/6129115/pexels-photo-6129115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Upendo Hospital Logo" class="logo">
+            <h1>Upendo Hospital</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('registration') }}">Registration</a></li>
+                <li><a href="{{ url_for('records') }}">Records</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Patient Records</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Patient ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>County</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for patient in patients %}
+                    <tr>
+                        <td>{{ patient[0] }}</td>
+                        <td>{{ patient[1] }}</td>
+                        <td>{{ patient[2] }}</td>
+                        <td>{{ patient[3] }}</td>
+                        <td>{{ patient[4] }}</td>
+                        <td>{{ patient[5] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Next of Kin Records</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Patient ID</th>
+                        <th>First Name</th>
+                        <th>Surname</th>
+                        <th>Relationship</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for kin in next_of_kin %}
+                    <tr>
+                        <td>{{ kin[0] }}</td>
+                        <td>{{ kin[1] }}</td>
+                        <td>{{ kin[2] }}</td>
+                        <td>{{ kin[3] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Timon - SCS3/2266/2023</p>
+    </footer>
+</body>
+</html>

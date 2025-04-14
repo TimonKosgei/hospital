@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upendo Hospital - Health Information System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="hospital-info">
+            <img src="https://images.pexels.com/photos/6129115/pexels-photo-6129115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Upendo Hospital Logo" class="logo">
+            <h1>Upendo Hospital</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('registration') }}">Registration</a></li>
+                <li><a href="{{ url_for('records') }}">Records</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="main-content">
+        <section>
+            <h2>Welcome to Upendo Hospital Health Information System</h2>
+            <article>
+                <p>Upendo Hospital is dedicated to providing compassionate and comprehensive healthcare services to our community. 
+                     Our name, "Upendo," meaning "love" in Swahili, reflects our core value of caring for each patient with empathy 
+                     and respect. We strive to create a healing environment where patients feel safe, 
+                     supported, and empowered on their journey to wellness.</p>
+            </article>
+        </section>
+        <aside class="sidebar">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="{{ url_for('records') }}">Timon's records</a></li>
+                <li><a href="{{ url_for('records') }}">Jane's records</a></li>
+            </ul>
+        </aside>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Timon - SCS3/2266/2023</p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
